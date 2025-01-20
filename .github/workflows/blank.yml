@@ -6,7 +6,7 @@ on:
       - main
   pull_request:
   schedule:
-    - cron: '0 0 * * 0' # Runs daily for security scans
+    - cron: '0 0 * * 0'
 
 jobs:
   build-and-test:
