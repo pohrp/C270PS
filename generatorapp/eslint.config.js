@@ -3,9 +3,12 @@ import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
+import React from 'react'
+import react from '@vitejs/plugin-react-swc'
+import eslintPluginPrettier from 'eslint-plugin-prettier'
 
 export default tseslint.config(
-  { ignores: ['dist'] },
+  { ignores: ['dist', 'vite.config.ts', '.eslintrc.cjs'] },
   {
     extends: [js.configs.recommended, ...tseslint.configs.recommended],
     files: ['**/*.{ts,tsx}'],
