@@ -1,0 +1,16 @@
+npm test
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "Running ESLint & Prettier before commit..."
+
+# Run Prettier on staged files
+npx prettier --write "src/**/*.{js,jsx,ts,tsx,json,md}"
+
+# Run ESLint on staged files
+npx eslint "src/**/*.{js,jsx,ts,tsx}" --fix
+
+# Add fixed files to staging area
+git add .
+
+echo "Linting and formatting complete!"
